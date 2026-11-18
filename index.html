@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <title>FF Control Center</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">FF</div><div><strong>CONTROL CENTER</strong><small>Cloud dashboard</small></div></div>
+      <span class="server-pill"><i></i> SERVER PANEL</span>
+    </header>
+
+    <section id="loginView" class="login-card">
+      <div class="eyebrow">OWNER ACCESS</div>
+      <h1>স্বাগতম</h1>
+      <p class="muted">Owner Panel খুলতে Render-এ সেট করা Admin Password দিন।</p>
+      <form id="loginForm">
+        <label for="password">Admin Password</label>
+        <input id="password" type="password" autocomplete="current-password" placeholder="আপনার Admin Password" required>
+        <button class="primary full" type="submit">নিরাপদে লগইন করুন</button>
+        <p id="loginError" class="error" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="dashboardView" hidden>
+      <div class="welcome-row">
+        <div><div class="eyebrow">OWNER DASHBOARD</div><h1>Control Center</h1><p class="muted">সার্ভার ও প্রোফাইল সেটিংস এক জায়গায়।</p></div>
+        <button id="logoutBtn" class="ghost">Logout</button>
+      </div>
+
+      <div class="notice">
+        <strong>গুরুত্বপূর্ণ:</strong> এটি Dashboard ও সার্ভার মনিটরিং প্রোটোটাইপ। এটি Free Fire-এ লগইন করে না, গেম চালায় না এবং গেমের Online Status পরিবর্তন করে না।
+      </div>
+
+      <div class="stats">
+        <article class="stat-card"><span>SERVER STATUS</span><strong id="serverStatus" class="green">Checking…</strong><small>Render service health</small></article>
+        <article class="stat-card"><span>SERVER UPTIME</span><strong id="uptime">—</strong><small>এই deploy চালু থাকার সময়</small></article>
+        <article class="stat-card"><span>MONITORING</span><strong id="monitorState">বন্ধ</strong><small>Dashboard setting only</small></article>
+      </div>
+
+      <section class="panel">
+        <div class="panel-heading"><div><div class="eyebrow">PROFILE SETTINGS</div><h2>Account Information</h2></div><span class="tag">LOCAL CONFIG</span></div>
+        <form id="settingsForm">
+          <label for="playerLabel">Account label / নাম</label>
+          <input id="playerLabel" maxlength="40" placeholder="যেমন: Main Account">
+          <label for="playerUid">Player UID (ঐচ্ছিক)</label>
+          <input id="playerUid" maxlength="32" inputmode="numeric" placeholder="শুধু UID, পাসওয়ার্ড নয়">
+          <label for="bio">Bio text (ঐচ্ছিক)</label>
+          <textarea id="bio" maxlength="150" rows="3" placeholder="তোমার পছন্দের Bio লিখো"></textarea>
+          <label class="toggle-row"><span><b>Monitoring চালু</b><small>শুধু এই Dashboard-এর monitoring flag</small></span><input id="monitoringEnabled" type="checkbox"><span class="switch"></span></label>
+          <button class="primary full" type="submit">সেটিংস সংরক্ষণ করুন</button>
+          <p id="saveMessage" class="message" role="status"></p>
+        </form>
+      </section>
+      <footer>FF Control Center <span>•</span> Secure prototype</footer>
+    </section>
+  </main>
+</body>
+</html>

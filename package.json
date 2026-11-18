@@ -1,0 +1,17 @@
+{
+  "name": "free-fire-bot-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A secure dashboard prototype for monitoring and managing settings. It does not automate Free Fire gameplay or logins.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "helmet": "^8.0.0"
+  }
+}
